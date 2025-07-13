@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLACE Psychology - Meet Dr Luke Fullagar</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body { background: #000; overflow: hidden; }
+        video { 
+            width: 100vw; 
+            height: 100vh; 
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <video id="welcomeVideo" autoplay muted playsinline>
+        Your browser doesn't support video
+    </video>
+    <script>
+        const video = document.getElementById('welcomeVideo');
+        const isPortrait = window.innerHeight > window.innerWidth;
+        
+        if (isPortrait) {
+            video.src = 'https://res.cloudinary.com/dhcwgwdbk/video/upload/v1752437931/PLACECLIENTINTROPORTRAIT_swjms3.mp4';
+        } else {
+            video.src = 'https://res.cloudinary.com/dhcwgwdbk/video/upload/v1752437942/PLACECLIENTINTROLANDSCAPE_hyjb95.mp4';
+        }
+        
+        video.play();
+        
+        document.addEventListener('click', () => {
+            video.muted = false;
+        }, { once: true });
+    </script>
+</body>
+</html>
